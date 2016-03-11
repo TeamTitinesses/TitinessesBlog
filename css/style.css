@@ -438,11 +438,11 @@ header {
 
 #post_form form .submit_btn {
     margin: 5px 0px;
-    padding: 10px 20px;
+    padding: 10px 30px;
     text-decoration: none;
     border: 1px solid #ccc;
     background: #fff;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 footer {
