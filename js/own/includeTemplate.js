@@ -11,9 +11,25 @@ var navigation = (function() {
 })();
 
 //include post on site
+var home = (function() {
+	$.get('html/home.html', function (template) {
+		var rendered = Mustache.render(template);
+		$('article').html(rendered);
+	})
+});
+
+//include post on site
 var post = (function() {
 	$.get('html/post.html', function (template) {
 		var rendered = Mustache.render(template);
-		$('.content').html(rendered);
+		$('article').html(rendered);
 	})
-})();
+});
+
+//include post on site
+var addPost = (function() {
+	$.get('html/addpost.html', function (template) {
+		var rendered = Mustache.render(template);
+		$('article').html(rendered);
+	})
+});
