@@ -26,9 +26,17 @@ var post = (function() {
 	})
 });
 
-//include post on site
+//include add post form  on site
 var addPost = (function() {
 	$.get('html/addpost.html', function (template) {
+		var rendered = Mustache.render(template);
+		$('article').html(rendered);
+	})
+});
+
+//include login form on site
+var login = (function() {
+	$.get('html/login.html', function (template) {
 		var rendered = Mustache.render(template);
 		$('article').html(rendered);
 	})
