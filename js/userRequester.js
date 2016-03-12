@@ -49,5 +49,17 @@ app.userRequester = (function () {
         return defer.promise;
     };
 
+    UserRequester.prototype.getInfo = function() {
+        var requestUrl = this.serviceUrl + '/_me';
+
+        app.requester.makeRequest('GET', requestUrl, null, true)
+            .then(function(success) {
+                console.log(success);
+            }, function(error) {
+            console.log(error);
+        }).done();
+    };
+
     return UserRequester;
+
 })();
