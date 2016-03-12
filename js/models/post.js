@@ -1,9 +1,12 @@
-var Post = (function (){
+var app = app || {};
+
+app.post = (function (){
     function Post (id, title, content, owner){
         this._id = id;
         this.setTitle(title);
         this.setContent(content);
         this.setOwner(owner);
+        this.comments = [];
         this.tags = [];
     }
 
@@ -36,6 +39,14 @@ var Post = (function (){
     Post.prototype.setOwner = function (owner) {
 
         this.owner = owner;
+    };
+
+    Post.prototype.getComments = function () {
+        return this.comments;
+    };
+
+    Post.prototype.addComment = function (comment){
+        this.comments.push(comment);
     };
 
     Post.prototype.getTags = function () {
