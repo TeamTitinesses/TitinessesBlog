@@ -21,7 +21,7 @@ a:hover {
     text-decoration: underline;
 }
 
-a.gototop {
+a.go_to_top {
     display: block;
     clear: both;
     float: right;
@@ -283,11 +283,11 @@ nav ul li span.home:hover {
     background: url(../images/tooplate_home_hover.png) center center no-repeat;
 }
 
-nav ul li span.aboutus {
+nav ul li span.add_post {
     background: url(../images/tooplate_aboutus.png) center center no-repeat;
 }
 
-nav ul li span.aboutus:hover {
+nav ul li span.add_post:hover {
     background: url(../images/tooplate_aboutus_hover.png) center center no-repeat;
 }
 
@@ -299,11 +299,11 @@ nav ul li span.services:hover {
     background: url(../images/tooplate_services_hover.png) center center no-repeat;
 }
 
-nav ul li span.portfolio {
+nav ul li span.post {
     background: url(../images/tooplate_portfolio.png) center center no-repeat;
 }
 
-nav ul li span.portfolio:hover {
+nav ul li span.post:hover {
     background: url(../images/tooplate_portfolio_hover.png) center center no-repeat;
 }
 
@@ -317,7 +317,7 @@ nav ul li span.contactus:hover {
 
 /* end of menu */
 
-#tooplate_main {
+main {
     clear: both;
     width: 780px;
     padding: 0 10px;
