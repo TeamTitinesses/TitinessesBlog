@@ -1,15 +1,22 @@
 /**
  * Created by Ivaylo Ivanov on 16-3-12.
  */
-var titinessisBlog = titinessisBlog || {};
+var app = app || {};
+
 if (sessionStorage.length === 0) {
 	sessionStorage.setItem('user', 'guest');
 	sessionStorage.setItem('permission', 'guest');
 }
 
 (function() {
+	app.router = Sammy(function() {
+		app.requester.config('kid_b1HhUaVLJb', '916fc5a992ee453780b58f565e2b50ad');
+		var userRequester = new app.userRequester();
+		//userRequester.signUp("ivan", 'ivanov', 'ivan@abv.bg');
+		userRequester.login('ivan', 'ivanov');
+		userRequester.getInfo();
+		console.log(userRequester);
 
-	titinessisBlog.router = Sammy(function() {
 		$('#testing').text('Welcome!');
 
 		this.get('#/home', function() {
@@ -40,5 +47,5 @@ if (sessionStorage.length === 0) {
 		});
 	});
 
-	titinessisBlog.router.run('#/home');
+	app.router.run('#/home');
 })();
