@@ -17,3 +17,16 @@
 5. Лента с тагове
 6. Брояч за всеки пост и общ брояч;
 7. Търсене по таг;
+
+
+
+
+
+
+{
+    "id" : "1",
+	"title" : "This is a title",
+	"author" : "Ivaylo Ivanov",
+	"tags" : "tag, author, post, article",
+	"content" : "This is a very short content for this post"
+}
