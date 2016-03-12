@@ -5,8 +5,10 @@
     <title>Titinessis Blog</title>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <script src="js/jquery.js"></script>
+    <script src="js/sammy.js"></script>
     <script src="js/mustache.js"></script>
     <script src="js/own/includeTemplate.js"></script>
+    <script src="js/own/route.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -60,7 +62,7 @@
                 <div class="col_w600 float_l">
                     <h4>Add Post</h4>
                     <div id="post_form">
-                        <form method="post" name="addPost" action="#">
+                        <form method="post" name="addPost" action="#/adding">
                             <label for="titleAdd">Title:</label>
                             <input type="text" id="titleAdd" name="title" class="required input_field"/>
                             <div class="cleaner h10"></div>
