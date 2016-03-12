@@ -2,11 +2,11 @@ var app = app || {};
 
 app.validator = {
     validateString: function (propertyName, string) {
-        if (typeof title !== "string") {
+        if (typeof string !== "string") {
             throw new Error(propertyName + " can be only string!");
         }
 
-        if (title == ""){
+        if (string === ""){
             throw new Error(propertyName + " cannot be empty string!")
         }
 
