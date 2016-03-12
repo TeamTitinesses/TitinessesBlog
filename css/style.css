@@ -285,11 +285,11 @@ nav ul li span.add_post:hover {
     background: url(../images/tooplate_aboutus_hover.png) center center no-repeat;
 }
 
-nav ul li span.services {
+nav ul li span.login {
     background: url(../images/tooplate_services.png) center center no-repeat;
 }
 
-nav ul li span.services:hover {
+nav ul li span.login:hover {
     background: url(../images/tooplate_services_hover.png) center center no-repeat;
 }
 
@@ -381,6 +381,10 @@ article {
     font-family: Verdana, Geneva, sans-serif;
     font-size: 14px;
     margin-top: 5px;
+}
+
+.required {
+    background-color: tomato;
 }
 
 #post_form form label {
