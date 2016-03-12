@@ -28,5 +28,13 @@
 	"title" : "This is a title",
 	"author" : "Ivaylo Ivanov",
 	"tags" : "tag, author, post, article",
-	"content" : "This is a very short content for this post"
+	"content" : "This is a very short content for this post",
+	"comments" : "This is a comments"
+}
+
+{
+    'id' : '1',
+    'name' : 'Name on user who comment',
+    'email' : 'user@gmail.com',
+    'content' : "This is a content of comment"
 }
