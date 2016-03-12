@@ -2,8 +2,11 @@
  * Created by Ivaylo Ivanov on 16-3-12.
  */
 var titinessisBlog = titinessisBlog || {};
+sessionStorage.setItem('user', 'guest');
+sessionStorage.setItem('permission', 'guest');
 
 (function() {
+
 	titinessisBlog.router = Sammy(function() {
 		$('#testing').text('Welcome!');
 
@@ -18,12 +21,20 @@ var titinessisBlog = titinessisBlog || {};
 		});
 
 		this.get('#/addpost', function() {
-			$("#testing").text('Post');
-			post();
+			//if not entry in blog
+			if (sessionStorage.getItem('user') === 'guest' &&
+				sessionStorage.getItem('permission') === 'guest') {
+				this.redirect('#/login');
+			} else {
+				$("#testing").text('AddPost');
+				addPost();
+			}
 		});
 
 		this.get('#/login', function() {
-			this.redirect('#/register');
+			//this.redirect('#/register');
+			$("#testing").text('Login');
+			login();
 		});
 	});
 
