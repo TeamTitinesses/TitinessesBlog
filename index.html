@@ -9,22 +9,25 @@
     <div id="wrapper">
         <span id="top"></span>
         <header>
-            <div id="site_title"><h1><a href="#">Titinessis blog</a></h1></div>
-            <div id="tooplate_menu">
+            <div id="title">
+                <h1>Titinessis</h1>
+            </div>
+            <nav>
                 <ul>
-                    <li><a href="#home"><span class="home"></span>Home</a></li>
+                    <li><a href="#/home"><span class="home"></span>Home</a></li>
                     <li><a href="#portfolio"><span class="portfolio"></span>Portfolio</a></li>
                     <li><a href="#about"><span class="aboutus"></span>About Us</a></li>
                     <li><a href="#services"><span class="services"></span>Services</a></li>
                     <li class="last"><a href="#contact"><span class="contactus"></span>Contact</a></li>
                 </ul>
-            </div>
+            </nav>
             <div class="cleaner"></div>
         </header>
 
         <div id="tooplate_main">
 
-            <div class="content"><span id="home"></span>
+            <div class="content">
+                <span id="home"></span>
                 <h2>Title on post</h2>
                 <p><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci, aliquam architecto
                     asperiores blanditiis cum deserunt distinctio eos et eum explicabo in incidunt iusto minus molestiae
@@ -60,10 +63,12 @@
             <div class="content_bottom"></div>
 
 
-            <div class="content_top"><span id="contact"></span></div>
+            <div class="content_top">
+                <span id="contact"></span>
+            </div>
             <div class="content">
 
-                <h2>Contact Us</h2>
+                <h2>Add new Post</h2>
                 <p><em>Aenean ut ipsum dolor. Proin magna erat, tincidunt quis sodales at, pharetra ultricies libero. Nulla
                     vel tincidunt urna. Duis venenatis vulputate nulla, ut facilisis arcu posuere nec. Validate <a
                             href="http://validator.w3.org/check?uri=referer" rel="nofollow"><strong>XHTML</strong></a> and
@@ -76,8 +81,8 @@
                     <h4>Add Post</h4>
                     <div id="post_form">
                         <form method="post" name="addPost" action="#">
-                            <label for="title">Title:</label>
-                            <input type="text" id="title" name="title" class="required input_field"/>
+                            <label for="titleAdd">Title:</label>
+                            <input type="text" id="titleAdd" name="title" class="required input_field"/>
                             <div class="cleaner h10"></div>
                             <label for="author">Author:</label>
                             <input type="text" class="required input_field" name="author" id="author"/>

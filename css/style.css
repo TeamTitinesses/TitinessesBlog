@@ -198,45 +198,42 @@ header {
     visibility: hidden;
 }
 
-#site_title {
+#title {
     float: left;
-    width: 210px;
+    width: 250px;
     height: 60px;
 }
 
-#site_title h1 {
+#title h1 {
     margin: 0;
     padding: 0;
-}
-
-#site_title h1 a {
     display: block;
-    width: 190px;
+    width: 200px;
     height: 60px;
     margin: 0 10px;
-    color: #b16502;
+    color: #a35622;
     font-size: 40px;
+    text-align: center;
+    line-height: 60px;
     outline: none;
-    text-indent: -10000px;
-    background: url(../images/tooplate_logo.jpg) no-repeat;
 }
 
 /* menu */
 
-#tooplate_menu {
+nav {
     float: right;
     width: 410px;
     height: 62px;
     padding: 0;
 }
 
-#tooplate_menu ul {
+nav ul {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-#tooplate_menu ul li {
+nav ul li {
     float: left;
     display: block;
     width: 80px;
@@ -248,11 +245,11 @@ header {
     background: url(../images/tooplate_menu_divider.jpg) no-repeat right center;
 }
 
-#tooplate_menu .last {
+nav .last {
     background: none;
 }
 
-#tooplate_menu ul li a {
+nav ul li a {
     display: block;
     position: relative;
     width: 80px;
@@ -266,11 +263,11 @@ header {
     outline: none;
 }
 
-#tooplate_menu ul li a:hover, #tooplate_menu ul li .current {
+nav ul li a:hover, #nav ul li .current {
     color: #d17403;
 }
 
-#tooplate_menu ul li span {
+nav ul li span {
     position: absolute;
     bottom: 20px;
     left: 22px;
@@ -278,43 +275,43 @@ header {
     height: 35px;
 }
 
-#tooplate_menu ul li span.home {
+nav ul li span.home {
     background: url(../images/tooplate_home.png) center center no-repeat;
 }
 
-#tooplate_menu ul li span.home:hover {
+nav ul li span.home:hover {
     background: url(../images/tooplate_home_hover.png) center center no-repeat;
 }
 
-#tooplate_menu ul li span.aboutus {
+nav ul li span.aboutus {
     background: url(../images/tooplate_aboutus.png) center center no-repeat;
 }
 
-#tooplate_menu ul li span.aboutus:hover {
+nav ul li span.aboutus:hover {
     background: url(../images/tooplate_aboutus_hover.png) center center no-repeat;
 }
 
-#tooplate_menu ul li span.services {
+nav ul li span.services {
     background: url(../images/tooplate_services.png) center center no-repeat;
 }
 
-#tooplate_menu ul li span.services:hover {
+nav ul li span.services:hover {
     background: url(../images/tooplate_services_hover.png) center center no-repeat;
 }
 
-#tooplate_menu ul li span.portfolio {
+nav ul li span.portfolio {
     background: url(../images/tooplate_portfolio.png) center center no-repeat;
 }
 
-#tooplate_menu ul li span.portfolio:hover {
+nav ul li span.portfolio:hover {
     background: url(../images/tooplate_portfolio_hover.png) center center no-repeat;
 }
 
-#tooplate_menu ul li span.contactus {
+nav ul li span.contactus {
     background: url(../images/tooplate_contactus.png) center center no-repeat;
 }
 
-#tooplate_menu ul li span.contactus:hover {
+nav ul li span.contactus:hover {
     background: url(../images/tooplate_contactus_hover.png) center center no-repeat;
 }
 
