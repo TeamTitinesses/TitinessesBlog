@@ -1,5 +1,13 @@
 var app = app || {};
 
+var appID = 'kid_b1HhUaVLJb';
+var appSecret = '916fc5a992ee453780b58f565e2b50ad';
+
+/*
+appID : kid_b1HhUaVLJb
+appSecret : 916fc5a992ee453780b58f565e2b50ad
+ */
+
 app.requester = (function () {
     function Requester(appId, appSecret) {
         this.appId = appId;
@@ -7,7 +15,7 @@ app.requester = (function () {
         this.baseUrl = 'https://baas.kinvey.com/';
     }
 
-    Requester.prototype.makeRequest = function(method, url, data, useSession) {
+    Requester.prototype.makeRequest = function (method, url, data, useSession) {
         var token,
             defer = Q.defer(),
             _this = this,
@@ -23,7 +31,7 @@ app.requester = (function () {
             };
 
         $.ajaxSetup({
-            beforeSend: function(xhr, settings) {
+            beforeSend: function (xhr, settings) {
                 if (!useSession) {
                     token = _this.appId + ':' + _this.appSecret;
                     xhr.setRequestHeader('Authorization', 'Basic ' + btoa(token));
@@ -31,7 +39,8 @@ app.requester = (function () {
                     token = sessionStorage['sessionAuth'];
                     xhr.setRequestHeader('Authorization', 'Kinvey ' + token);
                 }
-                if(data) {
+
+                if (data) {
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     settings.data = JSON.stringify(data);
                     return true;
@@ -45,8 +54,8 @@ app.requester = (function () {
     };
 
     return {
-        config: function(appId, appSecret) {
+        config: function (appId, appSecret) {
             app.requester = new Requester(appId, appSecret);
         }
     };
-}());
+});

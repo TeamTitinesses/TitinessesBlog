@@ -50,5 +50,7 @@ app.userRequester = (function () {
     };
 
     return UserRequester;
-
 })();
+
+console.log(app.requester(appID, appSecret));
+console.log(app.userRequester);
