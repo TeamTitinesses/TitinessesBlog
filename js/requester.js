@@ -3,11 +3,6 @@ var app = app || {};
 var appID = 'kid_b1HhUaVLJb';
 var appSecret = '916fc5a992ee453780b58f565e2b50ad';
 
-/*
-appID : kid_b1HhUaVLJb
-appSecret : 916fc5a992ee453780b58f565e2b50ad
- */
-
 app.requester = (function () {
     function Requester(appId, appSecret) {
         this.appId = appId;
