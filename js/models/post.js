@@ -3,9 +3,9 @@ var app = app || {};
 app.post = (function (){
     function Post (id, title, content, owner){
         this._id = id;
-        this.setTitle(title);
-        this.setContent(content);
-        this.setOwner(owner);
+        this.setTitle = title;
+        this.setContent = content;
+        this.setOwner = owner;
         this.comments = [];
         this.tags = [];
     }
