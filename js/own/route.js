@@ -2,8 +2,10 @@
  * Created by Ivaylo Ivanov on 16-3-12.
  */
 var titinessisBlog = titinessisBlog || {};
-sessionStorage.setItem('user', 'guest');
-sessionStorage.setItem('permission', 'guest');
+if (sessionStorage.length === 0) {
+	sessionStorage.setItem('user', 'guest');
+	sessionStorage.setItem('permission', 'guest');
+}
 
 (function() {
 
