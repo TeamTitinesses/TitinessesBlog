@@ -2,7 +2,6 @@
  * Created by Ivaylo Ivanov on 16-3-12.
  */
 
-
 //include navigation on site
 var navigation = (function() {
 	$.get('html/navigation.html', function(template) {
