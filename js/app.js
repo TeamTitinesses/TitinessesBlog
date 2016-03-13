@@ -11,7 +11,7 @@ var app = app || {};
 
 		this.get('#/home', function() {
 			postRequester.getAllPost();
-			home();
+			//home();
 		});
 
 		this.get('#/posts', function() {
