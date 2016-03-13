@@ -1,15 +1,15 @@
 <div class="col_w600 float_l">
-    <h4>Login</h4>
+    <h4>{{title}}</h4>
     <div id="post_form">
-        <form method="post" name="addPost" action="#/entry">
+        <form method="post" id="loginForm" action="#/login">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" class="required input_field"/>
             <div class="cleaner h10"></div>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" class="required input_field" />
             <div class="cleaner h10"></div>
-            <input type="submit" value="Send" id="submit" name="submit" class="submit_btn float_l"/>
-            <input type="reset" value="Reset" id="reset" name="reset" class="submit_btn float_r"/>
+            <input type="submit" value="Send" id="submitLogin" name="submit" class="submit_btn float_r"/>
+            <input type="reset" value="Reset" id="reset" name="reset" class="submit_btn float_l"/>
         </form>
     </div>
 </div>
