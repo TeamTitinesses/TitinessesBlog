@@ -12,7 +12,7 @@ var app = app || {};
 			home();
 		});
 
-		this.get('#/post', function() {
+		this.get('#/posts', function() {
 			post();
 		});
 
@@ -27,7 +27,7 @@ var app = app || {};
 
 		this.get('#/login', function() {
 			//this.redirect('#/register');
-			//userRequester.login('ivan', 'ivanov');
+			userRequester.login('ivaylo', 'ivanov');
 			//$('#loginForm').submit(function() {
 			//	console.log(this);
 			//});

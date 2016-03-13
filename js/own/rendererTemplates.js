@@ -4,7 +4,7 @@
 
 //include navigation on site
 var navigation = (function() {
-	$.get('html/navigation.html', function(template) {
+	$.get('view/navigation.html', function(template) {
 		var rendered = Mustache.render(template);
 		$('header').html(rendered);
 	})
@@ -12,15 +12,18 @@ var navigation = (function() {
 
 //include post on site
 var home = (function() {
-	$.get('html/home.html', function (template) {
-		var rendered = Mustache.render(template);
+	$.get('view/home.html', function (template) {
+		var dataView = {
+			title: "Title on post"
+		};
+		var rendered = Mustache.render(template, dataView);
 		$('article').html(rendered);
 	})
 });
 
 //include post on site
 var post = (function() {
-	$.get('html/post.html', function (template) {
+	$.get('view/posts.html', function (template) {
 		var dataView = {
 			title: "Title on post"
 		};
@@ -31,7 +34,7 @@ var post = (function() {
 
 //include add post form  on site
 var addPost = (function() {
-	$.get('html/addpost.html', function (template) {
+	$.get('view/addpost.html', function (template) {
 		var dataView = {
 			title: "Add new post"
 		};
@@ -42,7 +45,7 @@ var addPost = (function() {
 
 //include login form on site
 var login = (function() {
-	$.get('html/login.html', function (template) {
+	$.get('view/login.html', function (template) {
 		var dataView = {
 			title: "Login"
 		};
@@ -53,7 +56,7 @@ var login = (function() {
 
 //include login form on site
 var register = (function() {
-	$.get('html/register.html', function (template) {
+	$.get('view/register.html', function (template) {
 		var dataView = {
 			title: "Register"
 		};
