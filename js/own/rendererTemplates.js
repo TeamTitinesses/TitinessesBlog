@@ -21,7 +21,10 @@ var home = (function() {
 //include post on site
 var post = (function() {
 	$.get('html/post.html', function (template) {
-		var rendered = Mustache.render(template);
+		var dataView = {
+			title: "Title on post"
+		};
+		var rendered = Mustache.render(template, dataView);
 		$('article').html(rendered);
 	})
 });
@@ -29,7 +32,10 @@ var post = (function() {
 //include add post form  on site
 var addPost = (function() {
 	$.get('html/addpost.html', function (template) {
-		var rendered = Mustache.render(template);
+		var dataView = {
+			title: "Add new post"
+		};
+		var rendered = Mustache.render(template, dataView);
 		$('article').html(rendered);
 	})
 });
@@ -37,7 +43,21 @@ var addPost = (function() {
 //include login form on site
 var login = (function() {
 	$.get('html/login.html', function (template) {
-		var rendered = Mustache.render(template);
+		var dataView = {
+			title: "Login"
+		};
+		var rendered = Mustache.render(template, dataView);
+		$('article').html(rendered);
+	})
+});
+
+//include login form on site
+var register = (function() {
+	$.get('html/register.html', function (template) {
+		var dataView = {
+			title: "Register"
+		};
+		var rendered = Mustache.render(template, dataView);
 		$('article').html(rendered);
 	})
 });
