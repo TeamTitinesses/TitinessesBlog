@@ -337,6 +337,12 @@ article {
     background: url(../images/tooplate_content_bottom.jpg);
 }
 
+article > h1 {
+    text-align: center;
+    font-style: italic;
+    font-weight: 300;
+}
+
 .col_w330 {
     width: 330px
 }
