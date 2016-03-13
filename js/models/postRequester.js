@@ -17,6 +17,7 @@ app.postRequester = (function () {
 		app.requester.makeRequest('GET', requestUrl, null, true)
 			.then(function (success) {
 				PostRequester.prototype.postAll = success;
+				home(success);
 				defer.resolve();
 			}, function (error) {
 				console.error(error);
