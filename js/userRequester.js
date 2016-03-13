@@ -54,6 +54,7 @@ app.userRequester = (function () {
 
         app.requester.makeRequest('GET', requestUrl, null, true)
             .then(function(success) {
+                app.userRequester.prototype.activeUser = success;
                 console.log(success);
             }, function(error) {
             console.log(error);
