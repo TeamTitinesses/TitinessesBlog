@@ -1,2 +1,4 @@
 # TitinessesBlog
-Javasript Aplication Blog
+Javasript Aplication Blog using:
+
+##### JQuery, Q, Sammy, Mustache
