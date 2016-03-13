@@ -7,8 +7,10 @@ var app = app || {};
 	app.router = Sammy(function() {
 		app.requester.config('kid_b1HhUaVLJb', '916fc5a992ee453780b58f565e2b50ad');
 		var userRequester = new app.userRequester();
+		var postRequester = new app.postRequester();
 
 		this.get('#/home', function() {
+			postRequester.getAllPost();
 			home();
 		});
 
@@ -28,9 +30,9 @@ var app = app || {};
 		this.get('#/login', function() {
 			//this.redirect('#/register');
 			userRequester.login('ivaylo', 'ivanov');
-			//$('#loginForm').submit(function() {
-			//	console.log(this);
-			//});
+			$('#loginForm').submit(function() {
+				console.log(this);
+			});
 			login();
 		});
 
