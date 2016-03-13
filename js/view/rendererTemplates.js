@@ -13,9 +13,7 @@ var navigation = (function() {
 //include post on site
 var home = (function() {
 	$.get('view/home.html', function (template) {
-		var dataView = {
-			title: "Title on post"
-		};
+		var dataView = app.postRequester.postAll;
 		var rendered = Mustache.render(template, dataView);
 		$('article').html(rendered);
 	})
