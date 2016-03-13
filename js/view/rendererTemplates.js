@@ -11,10 +11,12 @@ var navigation = (function() {
 })();
 
 //include post on site
-var home = (function() {
+var home = (function(data) {
 	$.get('view/home.html', function (template) {
-		var dataView = app.postRequester.postAll;
-		var rendered = Mustache.render(template, dataView);
+		var viewData = {
+			data: data
+		}
+		var rendered = Mustache.render(template, viewData);
 		$('article').html(rendered);
 	})
 });
