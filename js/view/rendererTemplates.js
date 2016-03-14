@@ -33,17 +33,6 @@ var addPost = (function() {
 });
 
 //include login form on site
-var login = (function() {
-	$.get('templates/login.html', function (template) {
-		var dataView = {
-			title: "Login"
-		};
-		var rendered = Mustache.render(template, dataView);
-		$('article').html(rendered);
-	})
-});
-
-//include login form on site
 var register = (function() {
 	$.get('templates/register.html', function (template) {
 		var dataView = {

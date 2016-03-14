@@ -10,10 +10,12 @@ var app = app || {};
 
         var homeViewBag = app.homeViews.load();
         var postViewBag = app.postViews.load();
+		var loginViewBag = app.loginViews.load();
 
         var homeController = app.homeController.load(homeViewBag);
         var postController = app.postController.load(postModel, postViewBag);
         var userController = app.userController.load(userModel, postViewBag);
+		var loginController = app.loginController.load(loginViewBag);
 
         this.get('#/home', function () {
             userController.login('test', 'test');
@@ -36,12 +38,7 @@ var app = app || {};
         });
 
         this.get('#/login', function () {
-            //this.redirect('#/register');
-            //userModel.login('ivaylo', 'ivanov');
-            $('#loginForm').submit(function () {
-                console.log(this);
-            });
-            login();
+            loginController.loadLoginPage('article');
         });
 
         this.get('#/register', function () {
