@@ -1,23 +1,26 @@
 var app = app || {};
+var requester, selector, userModel, postModel, homeViewBag, postViewBag,
+	loginViewBag, addPostBag, homeController, postController, userController,
+	loginController, addPostController;
 
 (function () {
     app.router = Sammy(function () {
-        var requester = app.requester.config('kid_b1HhUaVLJb', '916fc5a992ee453780b58f565e2b50ad');
-        var selector = '#wrapper';
+        requester = app.requester.config('kid_b1HhUaVLJb', '916fc5a992ee453780b58f565e2b50ad');
+        selector = '#wrapper';
 
-        var userModel = app.userModel.load(requester);
-        var postModel = app.postModel.load(requester);
+        userModel = app.userModel.load(requester);
+        postModel = app.postModel.load(requester);
 
-        var homeViewBag = app.homeViews.load();
-        var postViewBag = app.postViews.load();
-		var loginViewBag = app.loginViews.load();
-		var addPostBag = app.addPostViews.load();
+        homeViewBag = app.homeViews.load();
+        postViewBag = app.postViews.load();
+		loginViewBag = app.loginViews.load();
+		addPostBag = app.addPostViews.load();
 
-        var homeController = app.homeController.load(homeViewBag);
-        var postController = app.postController.load(postModel, postViewBag);
-        var userController = app.userController.load(userModel, postViewBag);
-		var loginController = app.loginController.load(loginViewBag);
-		var addPostController = app.addPostController.load(addPostBag);
+        homeController = app.homeController.load(homeViewBag);
+        postController = app.postController.load(postModel, postViewBag);
+        userController = app.userController.load(userModel, postViewBag);
+		loginController = app.loginController.load(loginViewBag);
+		addPostController = app.addPostController.load(addPostBag);
 
         this.get('#/home', function () {
             userController.login('test', 'test');
