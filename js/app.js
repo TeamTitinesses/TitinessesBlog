@@ -18,11 +18,8 @@ var app = app || {};
         this.get('#/home', function () {
             userController.login('test', 'test');
             //userController.logout();
-
-
             homeController.loadHomePage('article');
             postController.getAllPosts('article');
-
         });
 
         this.get('#/posts', function () {

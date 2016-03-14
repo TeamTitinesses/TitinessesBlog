@@ -11,18 +11,6 @@ var navigation = (function() {
 })();
 
 //include post on site
-var home = (function(data) {
-	$.get('templates/home.html', function (template) {
-		var viewData = {
-			data: data
-		};
-		console.log(data);
-		var rendered = Mustache.render(template, viewData);
-		$('article').html(rendered);
-	})
-});
-
-//include post on site
 var post = (function() {
 	$.get('templates/posts.html', function (template) {
 		var dataView = {
