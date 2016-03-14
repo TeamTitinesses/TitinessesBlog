@@ -18,7 +18,7 @@ app.postController =(function () {
                 //posts.forEach(function (post) {
                 //    result.posts.push(new app.post(post._id, post.title, post.content, post.author));
                 //});
-                _this._viewBag.showPosts(selector,posts);
+                _this._viewBag.showPosts(selector, posts);
             }).done();
     };
 
