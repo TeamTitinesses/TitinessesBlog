@@ -12,8 +12,18 @@ app.userController = (function () {
         this._viewBag.showLoginPage(selector)
     };
 
-    UserController.prototype.login = function(username, password) {
+    UserController.prototype.register = function (username, password, email) {
+        this._model.register(username, password, email)
+            .then(function (success) {
+                var result = success;
+                sessionStorage['sessionAuth'] = result._kmd.authtoken;
+                sessionStorage['userId'] = result._id;
+            }, function (error) {
+                console.error(error);
+            }).done();
+    };
 
+    UserController.prototype.login = function(username, password) {
         this._model.login(username, password)
             .then(function (success) {
                 sessionStorage['sessionAuth'] = success._kmd.authtoken;
@@ -22,7 +32,7 @@ app.userController = (function () {
     };
 
     UserController.prototype.logout = function() {
-        return this._model.logout()
+        this._model.logout()
             .then(function() {
                 sessionStorage.clear();
             })
