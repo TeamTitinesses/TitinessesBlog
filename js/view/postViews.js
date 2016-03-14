@@ -1,12 +1,11 @@
 var app = app || {};
 
 app.postViews = (function () {
-    function showPosts (selector, data){
+    function showPosts(selector, post) {
         $.get('templates/home.html', function (template) {
-            data.forEach(function (post){
-                var rendered = Mustache.render(template, post);
-                $(selector).html(rendered);
-            })
+            var rendered = Mustache.render(template, post);
+            $(selector).html(rendered);
+
         })
     }
 
