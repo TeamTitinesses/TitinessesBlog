@@ -7,6 +7,14 @@ app.requester = (function () {
         this.baseUrl = 'https://baas.kinvey.com/';
     }
 
+    Requester.prototype.get = function(url, useSession) {
+        return this.makeRequest('GET', url, null, useSession);
+    };
+
+    Requester.prototype.post = function(url, data, useSession) {
+        return this.makeRequest('POST', url, data, useSession);
+    };
+
     Requester.prototype.makeRequest = function(method, url, data, useSession) {
         var token,
             defer = Q.defer(),
@@ -31,8 +39,7 @@ app.requester = (function () {
                     token = sessionStorage['sessionAuth'];
                     xhr.setRequestHeader('Authorization', 'Kinvey ' + token);
                 }
-
-                if (data) {
+                if(data) {
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     settings.data = JSON.stringify(data);
                     return true;
@@ -49,6 +56,5 @@ app.requester = (function () {
         config: function(appId, appSecret) {
             return new Requester(appId, appSecret);
         }
-
     };
-})();
+}());

@@ -30,24 +30,13 @@ app.userModel = (function () {
     };
 
     UserModel.prototype.login = function (username, password) {
-        var defer = Q.defer();
-        var requestUtl = this.serviceUrl + '/login',
+        var requestUrl = this.serviceUrl + '/login',
             data = {
                 username: username,
                 password: password
             };
 
-        app.requester.makeRequest('POST', requestUtl, data)
-            .then(function (success) {
-                sessionStorage['sessionAuth'] = success._kmd.authtoken;
-                sessionStorage['userId'] = success._id;
-                defer.resolve();
-            }, function (error) {
-                console.error(error);
-                defer.reject();
-            }).done();
-
-        return defer.promise;
+        return this.requester.post(requestUrl, data);
     };
 
     UserModel.prototype.getInfo = function() {

@@ -7,7 +7,7 @@ app.postModel = (function () {
 	}
 
 	//get all post
-	PostModel.prototype.getAllPost = function () {
+	PostModel.prototype.getAllPosts = function () {
 		var requestUrl = this.serviceUrl + '/post';
 		return this.requester.makeRequest('GET', requestUrl, null, true);
 	};

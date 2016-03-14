@@ -11,14 +11,14 @@ app.postController =(function () {
 
         this._model.getAllPosts()
             .then(function(posts){
-                var result = {
-                    posts: []
-                };
-
-                posts.forEach(function (post) {
-                    result.posts.push(new Post(post._id, post.title, post.content, post.owner));
-                });
-                _this._viewBag.showPosts(selector,result);
+                //var result = {
+                //    posts: []
+                //};
+                //
+                //posts.forEach(function (post) {
+                //    result.posts.push(new app.post(post._id, post.title, post.content, post.author));
+                //});
+                _this._viewBag.showPosts(selector,posts);
             }).done();
     };
 

@@ -1,6 +1,3 @@
-/**
- * Created by Ivaylo Ivanov on 16-3-12.
- */
 var app = app || {};
 
 (function() {
@@ -16,11 +13,14 @@ var app = app || {};
 
 		var homeController = app.homeController.load(homeViewBag);
 		var postController = app.postController.load(postModel, postViewBag);
+		var userController = app.userController.load(userModel, postViewBag);
 
-		postController.getAllPost();
+		//postController.getAllPosts();
 
 		this.get('#/home', function() {
+			userController.login('test', 'test');
 			homeController.loadHomePage('article');
+			postController.getAllPosts('article');
 		});
 
 		this.get('#/posts', function() {
@@ -38,7 +38,7 @@ var app = app || {};
 
 		this.get('#/login', function() {
 			//this.redirect('#/register');
-			userModel.login('ivaylo', 'ivanov');
+			//userModel.login('ivaylo', 'ivanov');
 			$('#loginForm').submit(function() {
 				console.log(this);
 			});
