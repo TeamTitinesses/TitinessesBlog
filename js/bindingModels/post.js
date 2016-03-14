@@ -1,11 +1,11 @@
 var app = app || {};
 
 app.post = (function (){
-    function Post (id, title, content, owner){
+    function Post (id, title, content, author){
         this._id = id;
-        this.setTitle = title;
-        this.setContent = content;
-        this.setOwner = owner;
+        this.setTitle(title);
+        this.setContent(content);
+        this.setAuthor(author);
         this.comments = [];
         this.tags = [];
     }
@@ -36,7 +36,7 @@ app.post = (function (){
         return this.owner;
     };
 
-    Post.prototype.setOwner = function (owner) {
+    Post.prototype.setAuthor = function (owner) {
 
         this.owner = owner;
     };
@@ -57,5 +57,5 @@ app.post = (function (){
         this.tags.push(tag);
     };
 
-    return Post
+    return Post;
 })();

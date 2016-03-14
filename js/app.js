@@ -1,21 +1,30 @@
-/**
- * Created by Ivaylo Ivanov on 16-3-12.
- */
 var app = app || {};
 
 (function() {
 	app.router = Sammy(function() {
-		app.requester.config('kid_b1HhUaVLJb', '916fc5a992ee453780b58f565e2b50ad');
-		var userRequester = new app.userRequester();
-		var postRequester = new app.postRequester();
+		var requester = app.requester.config('kid_b1HhUaVLJb', '916fc5a992ee453780b58f565e2b50ad');
+		var selector = '#wrapper';
+
+		var userModel = app.userModel.load(requester);
+		var postModel = app.postModel.load(requester);
+
+		var homeViewBag = app.homeViews.load();
+		var postViewBag = app.postViews.load();
+
+		var homeController = app.homeController.load(homeViewBag);
+		var postController = app.postController.load(postModel, postViewBag);
+		var userController = app.userController.load(userModel, postViewBag);
+
+		//postController.getAllPosts();
 
 		this.get('#/home', function() {
-			postRequester.getAllPost();
-			//home();
+			userController.login('test', 'test');
+			homeController.loadHomePage('article');
+			postController.getAllPosts('article');
 		});
 
 		this.get('#/posts', function() {
-			post();
+			postController.getAllPosts('article')
 		});
 
 		this.get('#/addpost', function() {
@@ -29,7 +38,7 @@ var app = app || {};
 
 		this.get('#/login', function() {
 			//this.redirect('#/register');
-			userRequester.login('ivaylo', 'ivanov');
+			//userModel.login('ivaylo', 'ivanov');
 			$('#loginForm').submit(function() {
 				console.log(this);
 			});
@@ -37,7 +46,7 @@ var app = app || {};
 		});
 
 		this.get('#/register', function() {
-			//userRequester.signUp("ivaylo", 'ivanov', 'ivaylo@abv.bg');
+			//userModel.signUp("ivaylo", 'ivanov', 'ivaylo@abv.bg');
 			register();
 		})
 	});
