@@ -278,19 +278,19 @@ nav ul li span.home:hover {
 }
 
 nav ul li span.add_post {
-    background: url(../images/tooplate_aboutus.png) center center no-repeat;
-}
-
-nav ul li span.add_post:hover {
-    background: url(../images/tooplate_aboutus_hover.png) center center no-repeat;
-}
-
-nav ul li span.login {
     background: url(../images/tooplate_services.png) center center no-repeat;
 }
 
-nav ul li span.login:hover {
+nav ul li span.add_post:hover {
     background: url(../images/tooplate_services_hover.png) center center no-repeat;
+}
+
+nav ul li span.login {
+    background: url(../images/tooplate_aboutus.png) center center no-repeat;
+}
+
+nav ul li span.login:hover {
+    background: url(../images/tooplate_aboutus_hover.png) center center no-repeat;
 }
 
 nav ul li span.post {
