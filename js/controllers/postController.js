@@ -11,10 +11,7 @@ app.postController =(function () {
 
         this._model.getAllPosts()
             .then(function(posts){
-                posts.forEach(function (post) {
-                    _this._viewBag.showPosts(selector, post);
-                });
-
+				_this._viewBag.showPosts(selector, posts);
             }).done();
     };
 

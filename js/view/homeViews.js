@@ -1,10 +1,10 @@
 var app = app || {};
 
 app.homeViews = (function () {
-    function showHomePage (selector){
-        $.get('templates/home.html', function (template, data) {
+    function showHomePage (selector, posts){
+        $.get('templates/home.html', function (template) {
             var viewData = {
-                data: data
+                data: posts
             };
 
             var rendered = Mustache.render(template, viewData);
