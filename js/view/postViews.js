@@ -6,6 +6,12 @@ app.postViews = (function () {
 			var viewData = {
 				data: posts
 			};
+			//posts.forEach(function(el) {
+			//	if(typeof el.content === 'object') {
+			//		console.log(el);
+			//	}
+			//});
+
             var rendered = Mustache.render(template, viewData);
             $(selector).html(rendered);
         })
