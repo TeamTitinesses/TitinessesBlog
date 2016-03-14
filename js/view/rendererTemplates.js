@@ -15,7 +15,8 @@ var home = (function(data) {
 	$.get('templates/home.html', function (template) {
 		var viewData = {
 			data: data
-		}
+		};
+		console.log(data);
 		var rendered = Mustache.render(template, viewData);
 		$('article').html(rendered);
 	})
