@@ -20,14 +20,3 @@ var post = (function() {
 		$('article').html(rendered);
 	})
 });
-
-//include login form on site
-var register = (function() {
-	$.get('templates/register.html', function (template) {
-		var dataView = {
-			title: "Register"
-		};
-		var rendered = Mustache.render(template, dataView);
-		$('article').html(rendered);
-	})
-});
