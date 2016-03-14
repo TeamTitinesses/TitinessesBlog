@@ -16,11 +16,12 @@ app.postController =(function () {
     };
 
     PostController.prototype.addPost = function (data) {
-        var _this =  this;
+        var _this = this;
 
         var postOutputModel ={
             title: data.title
         };
+
 
         this._model.addPost(postOutputModel).then(function () {
             _this.getAllPosts();

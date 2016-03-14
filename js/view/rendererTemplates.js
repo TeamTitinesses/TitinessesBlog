@@ -21,17 +21,6 @@ var post = (function() {
 	})
 });
 
-//include add post form  on site
-var addPost = (function() {
-	$.get('templates/addpost.html', function (template) {
-		var dataView = {
-			title: "Add new post"
-		};
-		var rendered = Mustache.render(template, dataView);
-		$('article').html(rendered);
-	})
-});
-
 //include login form on site
 var register = (function() {
 	$.get('templates/register.html', function (template) {
