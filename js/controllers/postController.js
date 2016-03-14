@@ -7,7 +7,7 @@ app.postController =(function () {
     }
     
     PostController.prototype.getAllPosts = function (selector) {
-        var _this =  this;
+        var _this = this;
 
         this._model.getAllPosts()
             .then(function(posts){
