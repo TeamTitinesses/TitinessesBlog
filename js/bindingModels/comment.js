@@ -35,5 +35,5 @@ app.comment = (function (){
         this.content = content;
     };
     
-    return Comment
+    return Comment;
 })();

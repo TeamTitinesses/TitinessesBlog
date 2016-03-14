@@ -1,11 +1,12 @@
 var app = app || {};
 
-app.userRequester = (function () {
-    function UserRequester() {
-        this.serviceUrl = app.requester.baseUrl + 'user/' + app.requester.appId;
+app.userModel = (function () {
+    function UserModel(requester) {
+        this.requester = requester;
+        this.serviceUrl = this.requester.baseUrl + 'user/' + this.requester.appId;
     }
 
-    UserRequester.prototype.signUp = function (username, password, email) {
+    UserModel.prototype.signUp = function (username, password, email) {
         var defer = Q.defer();
         var requestUrl = this.serviceUrl,
             data = {
@@ -28,7 +29,7 @@ app.userRequester = (function () {
         return defer.promise;
     };
 
-    UserRequester.prototype.login = function (username, password) {
+    UserModel.prototype.login = function (username, password) {
         var defer = Q.defer();
         var requestUtl = this.serviceUrl + '/login',
             data = {
@@ -49,18 +50,21 @@ app.userRequester = (function () {
         return defer.promise;
     };
 
-    UserRequester.prototype.getInfo = function() {
+    UserModel.prototype.getInfo = function() {
         var requestUrl = this.serviceUrl + '/_me';
 
         app.requester.makeRequest('GET', requestUrl, null, true)
             .then(function(success) {
-                app.userRequester.prototype.activeUser = success;
+                app.userModel.prototype.activeUser = success;
                 console.log(success);
             }, function(error) {
             console.log(error);
         }).done();
     };
 
-    return UserRequester;
-
+    return {
+        load: function (requester) {
+            return new UserModel(requester);
+        }
+    }
 })();

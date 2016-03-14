@@ -47,7 +47,7 @@ app.requester = (function () {
 
     return {
         config: function(appId, appSecret) {
-            app.requester = new Requester(appId, appSecret);
+            return new Requester(appId, appSecret);
         }
 
     };

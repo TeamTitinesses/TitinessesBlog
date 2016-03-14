@@ -57,5 +57,5 @@ app.post = (function (){
         this.tags.push(tag);
     };
 
-    return Post
+    return Post;
 })();

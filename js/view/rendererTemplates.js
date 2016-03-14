@@ -4,7 +4,7 @@
 
 //include navigation on site
 var navigation = (function() {
-	$.get('view/navigation.html', function(template) {
+	$.get('templates/navigation.html', function(template) {
 		var rendered = Mustache.render(template);
 		$('header').html(rendered);
 	})
@@ -12,7 +12,7 @@ var navigation = (function() {
 
 //include post on site
 var home = (function(data) {
-	$.get('view/home.html', function (template) {
+	$.get('templates/home.html', function (template) {
 		var viewData = {
 			data: data
 		}
@@ -23,7 +23,7 @@ var home = (function(data) {
 
 //include post on site
 var post = (function() {
-	$.get('view/posts.html', function (template) {
+	$.get('templates/posts.html', function (template) {
 		var dataView = {
 			title: "Title on post"
 		};
@@ -34,7 +34,7 @@ var post = (function() {
 
 //include add post form  on site
 var addPost = (function() {
-	$.get('view/addpost.html', function (template) {
+	$.get('templates/addpost.html', function (template) {
 		var dataView = {
 			title: "Add new post"
 		};
@@ -45,7 +45,7 @@ var addPost = (function() {
 
 //include login form on site
 var login = (function() {
-	$.get('view/login.html', function (template) {
+	$.get('templates/login.html', function (template) {
 		var dataView = {
 			title: "Login"
 		};
@@ -56,7 +56,7 @@ var login = (function() {
 
 //include login form on site
 var register = (function() {
-	$.get('view/register.html', function (template) {
+	$.get('templates/register.html', function (template) {
 		var dataView = {
 			title: "Register"
 		};

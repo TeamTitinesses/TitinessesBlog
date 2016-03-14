@@ -15,10 +15,10 @@ app.postController =(function () {
                     posts: []
                 };
 
-                posts.forEach(function (posts) {
-                    result.posts.push(new PostInputModel(post._id,post.title));
+                posts.forEach(function (post) {
+                    result.posts.push(new Post(post._id, post.title, post.content, post.owner));
                 });
-                _this._viewBag.showPost(selector,result);
+                _this._viewBag.showPosts(selector,result);
             }).done();
     };
 
