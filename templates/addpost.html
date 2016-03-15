@@ -6,15 +6,15 @@
             <input type="text" id="titleAdd" name="title" class="required input_field"/>
             <div class="cleaner h10"></div>
             <label for="author">Author:</label>
-            <input type="text" class="required input_field" name="author" id="author"/>
+            <input type="text" name="author" id="author" class="required input_field" />
             <div class="cleaner h10"></div>
             <label for="tags">Tags:</label>
-            <input type="text" class="input_field" name="subject" id="tags"/>
+            <input type="text" class="input_field" name="tags" id="tags"/>
             <div class="cleaner h10"></div>
             <label for="content">Content:</label>
-            <textarea id="content" name="text" rows="0" cols="0" class="required"></textarea>
+            <textarea id="content" name="content" rows="0" cols="0" class="required"></textarea>
             <div class="cleaner h10"></div>
-            <input type="submit" value="Send" id="submit" name="submit" class="submit_btn float_l"/>
+            <input type="submit" value="Send" id="submit" name="submit" onclick="postController.addPost(this.form)" class="submit_btn float_l"/>
             <input type="reset" value="Reset" id="reset" name="reset" class="submit_btn float_r"/>
         </form>
     </div>
