@@ -1,7 +1,8 @@
 var app = app || {};
 var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 	loginViewBag, addPostBag, homeController, postController, userController,
-	loginController, addPostController, registerViewBag, registerController;
+	loginController, addPostController, registerViewBag, registerController,
+	contactViewBag, contactController;
 
 (function () {
     app.router = Sammy(function () {
@@ -16,6 +17,7 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 		loginViewBag = app.loginViews.load();
 		addPostBag = app.addPostViews.load();
 		registerViewBag = app.registerViews.load();
+		contactViewBag = app.contactViews.load();
 
         homeController = app.homeController.load(homeViewBag);
         postController = app.postController.load(postModel, postViewBag);
@@ -23,6 +25,7 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 		loginController = app.loginController.load(loginViewBag);
 		addPostController = app.addPostController.load(addPostBag);
 		registerController = app.registerController.load(registerViewBag);
+		contactController = app.contactController.load(contactViewBag);
 
         this.get('#/home', function () {
             userController.login('test', 'test');
@@ -51,7 +54,11 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
         this.get('#/register', function () {
             //userModel.signUp("ivaylo", 'ivanov', 'ivaylo@abv.bg');
             registerController.loadRegisterPage('article');
-        })
+        });
+
+        this.get('#/contact', function () {
+            contactController.loadContactPage('article');
+        });
     });
 
     app.router.run('#/home');
