@@ -38,6 +38,14 @@ app.userController = (function () {
             })
     };
 
+    UserController.prototype.checkActiveUser = function () {
+        if (sessionStorage.length === 0) {
+            return false;
+        } else {
+            return true;
+        }
+    };
+
     return {
         load: function (model, viewBag) {
             return new UserController(model, viewBag)
