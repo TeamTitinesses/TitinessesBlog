@@ -1,5 +1,10 @@
-<span id="home">{{author}}</span>
+<h1>All posts</h1>
+{{#data}}
+<span id="home">by {{author}}</span>
 <h2>{{title}}</h2>
 <p><em>{{content}}</em></p>
+<p>{{comments}}</p>
+<p align="right">{{tags}}</p>
+<div class="cleaner h20"></div>
+{{/data}}
 <div class="cleaner h30"></div>
-
