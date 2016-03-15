@@ -36,9 +36,11 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 		contactController = app.contactController.load(contactViewBag);
 
         this.get('#/home', function () {
-            userController.login('test', 'test');
-            homeController.loadHomePage('article');
-            //postController.getAllPosts('article');
+			if(userController.checkActiveUser()) {
+				homeController.loadHomePage('article');
+			} else {
+				this.redirect('#/login');
+			}
         });
 
         this.get('#/posts', function () {
@@ -58,7 +60,11 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
         });
 
         this.get('#/login', function () {
-            loginController.loadLoginPage('article');
+			if(userController.checkActiveUser()) {
+				this.redirect('#/register');
+			} else {
+				loginController.loadLoginPage('article');
+			}
         });
 
 		this.get('#/auto-login', function () {
@@ -71,7 +77,11 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
         });
 
         this.get('#/contact', function () {
-            contactController.loadContactPage('article');
+			if(userController.checkActiveUser()) {
+				contactController.loadContactPage('article');
+			} else {
+				this.redirect('#/login');
+			}
         });
 
 		this.get('#/logout', function () {
