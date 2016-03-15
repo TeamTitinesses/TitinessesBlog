@@ -37,9 +37,8 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 
         this.get('#/home', function () {
             userController.login('test', 'test');
-            //userController.logout();
             homeController.loadHomePage('article');
-            postController.getAllPosts('article');
+            //postController.getAllPosts('article');
         });
 
         this.get('#/posts', function () {
@@ -67,6 +66,10 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
         this.get('#/contact', function () {
             contactController.loadContactPage('article');
         });
+
+		this.get('#/logout', function () {
+			userController.logout();
+		})
     });
 
     app.router.run('#/home');

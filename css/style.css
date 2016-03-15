@@ -433,3 +433,11 @@ footer {
 footer a {
     color: #fff;
 }
+
+#logout {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    text-align: center;
+    display: block;
+}
