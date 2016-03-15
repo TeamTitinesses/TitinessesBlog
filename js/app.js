@@ -42,23 +42,30 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
         });
 
         this.get('#/posts', function () {
-            postController.getAllPosts('article');
+			if (userController.checkActiveUser()) {
+				postController.getAllPosts('article');
+			} else {
+				this.redirect('#/login');
+			}
         });
 
         this.get('#/addpost', function () {
-            //if not entry in blog
-            if (sessionStorage.length === 0) {
-                this.redirect('#/login');
-            } else {
-                addPostController.loadAddPostPage('article');
-            }
+			if(userController.checkActiveUser()) {
+				addPostController.loadAddPostPage('article');
+			} else {
+				this.redirect('#/login');
+			}
         });
 
         this.get('#/login', function () {
             loginController.loadLoginPage('article');
         });
 
-        this.get('#/register', function () {
+		this.get('#/auto-login', function () {
+			userController.login('test', 'test');
+		});
+
+		this.get('#/register', function () {
             //userModel.signUp("ivaylo", 'ivanov', 'ivaylo@abv.bg');
             registerController.loadRegisterPage('article');
         });
