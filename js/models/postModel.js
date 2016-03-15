@@ -12,6 +12,12 @@ app.postModel = (function () {
 		return this.requester.makeRequest('GET', requestUrl, null, true);
 	};
 
+	//add post to kinvey
+	PostModel.prototype.addPost = function (data) {
+		var requestUrl = this.serviceUrl + '/post';
+		return this.requester.makeRequest('POST', requestUrl, data, true);
+	};
+
 	return {
 		load: function (requester) {
 			return new PostModel(requester);
