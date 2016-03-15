@@ -86,7 +86,12 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 
 		this.get('#/logout', function () {
 			userController.logout();
-		})
+		});
+
+		this.get('#/adding', function () {
+			//TODO redirect to post page
+			//postController.addPost(this);
+		});
     });
 
     app.router.run('#/home');
