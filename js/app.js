@@ -4,6 +4,14 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 	loginController, addPostController, registerViewBag, registerController,
 	contactViewBag, contactController;
 
+//include navigation on site
+(function() {
+	$.get('templates/navigation.html', function(template) {
+		var rendered = Mustache.render(template);
+		$('header').html(rendered);
+	})
+})();
+
 (function () {
     app.router = Sammy(function () {
         requester = app.requester.config('kid_b1HhUaVLJb', '916fc5a992ee453780b58f565e2b50ad');
