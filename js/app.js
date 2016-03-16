@@ -109,6 +109,19 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 			//TODO redirect to post page
 			//postController.addPost(this);
 		});
+
+		$('#search').submit(function (even) {
+			var searchValue = this[0].value;
+			console.log(app.allPosts);
+			if(app.allPosts !== undefined) {
+				app.allPosts.forEach(function (post) {
+					if(post.tags.indexOf(searchValue) > -1) {
+						var url = '#/post/' + post._id;
+						$(location).attr("href", url);
+					}
+				});
+			}
+		})
     });
 
     app.router.run('#/home');
