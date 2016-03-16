@@ -7,11 +7,12 @@ app.homeController = (function(){
     }
 
     HomeController.prototype.loadHomePage = function(selector){
-		console.log(this);
-		//this._model.getAllPosts()
-		//	.then(function(posts){
-		//		_this._viewBag.showHomePage(selector, posts);
-		//	}).done();
+		var _this = this;
+		this._postModel.getAllPosts()
+			.then(function(posts){
+				app.allPosts = posts;
+				_this._viewBag.showHomePage(selector, posts);
+			}).done();
 
     };
 
