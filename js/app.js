@@ -27,7 +27,7 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 		registerViewBag = app.registerViews.load();
 		contactViewBag = app.contactViews.load();
 
-        homeController = app.homeController.load(homeViewBag);
+        homeController = app.homeController.load(postModel, homeViewBag);
         postController = app.postController.load(postModel, postViewBag);
         userController = app.userController.load(userModel, postViewBag);
 		loginController = app.loginController.load(loginViewBag);
