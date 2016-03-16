@@ -56,14 +56,13 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 		this.get(/\#\/post\/(.*)/, function () {
 			if (userController.checkActiveUser()) {
 				var _this = this;
-
-				app.allPosts.forEach(function (post) {
-					if(post._id === _this.params.splat[0]) {
-						console.log(post);
-						postOneController.loadOnePostPage('article', post);
-					}
-				});
-				console.log(app.allPosts);
+				if(app.allPosts !== undefined) {
+					app.allPosts.forEach(function (post) {
+						if(post._id === _this.params.splat[0]) {
+							postOneController.loadOnePostPage('article', post);
+						}
+					});
+				}
 			} else {
 				this.redirect('#/login');
 			}
