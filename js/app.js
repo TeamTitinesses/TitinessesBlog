@@ -2,7 +2,7 @@ var app = app || {};
 var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 	loginViewBag, addPostBag, homeController, postController, userController,
 	loginController, addPostController, registerViewBag, registerController,
-	contactViewBag, contactController;
+	contactViewBag, contactController, onePostViewBag, postOneController;
 
 //include navigation on site
 (function() {
@@ -26,6 +26,7 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 		addPostBag = app.addPostViews.load();
 		registerViewBag = app.registerViews.load();
 		contactViewBag = app.contactViews.load();
+		onePostViewBag = app.postOneViews.load();
 
         homeController = app.homeController.load(postModel, homeViewBag);
         postController = app.postController.load(postModel, postViewBag);
@@ -34,6 +35,7 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 		addPostController = app.addPostController.load(addPostBag);
 		registerController = app.registerController.load(registerViewBag);
 		contactController = app.contactController.load(contactViewBag);
+		postOneController = app.postOneController.load(onePostViewBag);
 
         this.get('#/home', function () {
 			if(userController.checkActiveUser()) {
@@ -50,6 +52,22 @@ var requester, selector, userModel, postModel, homeViewBag, postViewBag,
 				this.redirect('#/login');
 			}
         });
+
+		this.get(/\#\/post\/(.*)/, function () {
+			if (userController.checkActiveUser()) {
+				var _this = this;
+
+				app.allPosts.forEach(function (post) {
+					if(post._id === _this.params.splat[0]) {
+						console.log(post);
+						postOneController.loadOnePostPage('article', post);
+					}
+				});
+				console.log(app.allPosts);
+			} else {
+				this.redirect('#/login');
+			}
+		});
 
         this.get('#/addpost', function () {
 			if(userController.checkActiveUser()) {
