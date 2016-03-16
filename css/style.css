@@ -77,6 +77,11 @@ h2 {
     background: url(../images/tooplate_divider.jpg) repeat-x bottom
 }
 
+#link_title{
+    font-size: 28px;
+    color: black;
+}
+
 h3 {
     font-size: 24px;
     margin: 0 0 25px;
