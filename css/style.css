@@ -460,6 +460,6 @@ input {
     text-align: center;
 }
 
-input[type="button"] {
+input[type="submit"] {
     width: 60px;
 }
