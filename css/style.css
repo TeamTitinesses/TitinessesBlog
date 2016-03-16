@@ -446,3 +446,20 @@ footer a {
     text-align: center;
     display: block;
 }
+
+#search {
+    float: right;
+    margin: 10px 20px 0 0;
+}
+
+input {
+    border: 0;
+    border-radius: 5px;
+    width: 160px;
+    height: 25px;
+    text-align: center;
+}
+
+input[type="button"] {
+    width: 60px;
+}
