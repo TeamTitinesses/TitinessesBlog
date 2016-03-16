@@ -11,21 +11,29 @@ app.postController =(function () {
 
         this._model.getAllPosts()
             .then(function(posts){
+				app.allPosts = posts;
 				_this._viewBag.showPosts(selector, posts);
             }).done();
     };
 
     PostController.prototype.addPost = function (data) {
-        var _this = this;
 
-        var postOutputModel ={
-            title: data.title
-        };
+		//TODO problem
+		var post = new app.post(3, data.title.value, data.content.value, data.author.value)
+		post.addTags(data.tags.value);
 
-
-        this._model.addPost(postOutputModel).then(function () {
-            _this.getAllPosts();
-        })
+		console.log(post);
+        //var _this = this;
+		//
+        //var postOutputModel ={
+        //    title: data.title
+        //};
+		//
+		//
+        //this._model.addPost(postOutputModel)
+        //    .then(function () {
+        //    _this.getAllPosts();
+        //});
     };
 
     return {
